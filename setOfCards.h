@@ -5,6 +5,7 @@
 #ifndef CARDSBATTLE_SETOFCARDS_H
 #define CARDSBATTLE_SETOFCARDS_H
 #include "cellOfCards.h"
+#include <time.h>
 
 typedef struct SetOfCards{
     CellOfCards *head;
@@ -16,5 +17,6 @@ void addCellOfCardToSetOfCardsByTail(SetOfCards* setOfCards, CellOfCards* cellOf
 void displaySetOfCards(SetOfCards* setOfCards);
 void deleteSetOfCards(SetOfCards** setOfCards);
 void fillSetOfCards(SetOfCards* setOfCards);
+void shuffleSetOfCards(SetOfCards* setOfCards);
 
 #endif //CARDSBATTLE_SETOFCARDS_H

@@ -4,6 +4,15 @@
 
 #include "setOfCards.h"
 
+int lenOfSetOfCards(SetOfCards* setOfCards){
+    int len = 0;
+    CellOfCards* temp = setOfCards->head;
+    while (temp != NULL) {
+        len++;
+        temp = temp->next;
+    }return len;
+}
+
 SetOfCards *createEmptySetOfCards(){
     SetOfCards *newSetOfCards = (SetOfCards*) malloc(sizeof (SetOfCards));
     newSetOfCards->head = NULL;
@@ -59,6 +68,38 @@ void fillSetOfCards(SetOfCards* setOfCards){
             }
         }
     }
+}
+
+void shuffleSetOfCards(SetOfCards* setOfCards) {
+    // Initialisation du générateur de nombres aléatoires avec une graine basée sur le temps
+    srand((unsigned)time(NULL));
+    int len = lenOfSetOfCards(setOfCards);
+    // Créez un tableau temporaire pour stocker les pointeurs de cartes
+    CellOfCards** cardArray = (CellOfCards**)malloc(len * sizeof(CellOfCards*));
+    // Remplissez le tableau avec les pointeurs de cartes
+    CellOfCards *temp = setOfCards->head;
+    int index = 0;
+    while (temp != NULL) {
+        cardArray[index++] = temp;
+        temp = temp->next;
+    }
+    // Effectuez le mélange Fisher-Yates
+    for (int i = len - 1; i > 0; i--) {
+        int j = rand() % (i + 1);
+        // Échangez les cartes aux indices i et j dans le tableau
+        CellOfCards* temp = cardArray[i];
+        cardArray[i] = cardArray[j];
+        cardArray[j] = temp;
+    }
+    // Remettez les cartes mélangées dans la liste chaînée
+    setOfCards->head = cardArray[0];
+    setOfCards->tail = cardArray[len - 1];
+    for (int i = 0; i < len - 1; i++) {
+        cardArray[i]->next = cardArray[i + 1];
+    }
+    cardArray[len - 1]->next = NULL;
+    // Libérez la mémoire allouée pour le tableau temporaire
+    free(cardArray);
 }
 
 
