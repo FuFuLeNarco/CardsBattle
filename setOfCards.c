@@ -71,6 +71,9 @@ void fillSetOfCards(SetOfCards* setOfCards){
 }
 
 void shuffleSetOfCards(SetOfCards* setOfCards) {
+    //Fonction assez complexe accrochez vous j'ai commenté le code
+
+
     // Initialisation du générateur de nombres aléatoires avec une graine basée sur le temps
     srand((unsigned)time(NULL));
     int len = lenOfSetOfCards(setOfCards);
