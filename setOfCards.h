@@ -1,0 +1,9 @@
+//
+// Created by Le Gall on 28/09/2023.
+//
+
+#ifndef CARDSBATTLE_SETOFCARDS_H
+#define CARDSBATTLE_SETOFCARDS_H
+
+
+#endif //CARDSBATTLE_SETOFCARDS_H

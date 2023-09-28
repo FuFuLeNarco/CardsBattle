@@ -1,9 +1,9 @@
-#include "cards.h"
+#include "cellOfCards.h"
 
 int main() {
-    Card *card = createCard(10, Pique);
-    displayCard(card);
-    deleteCard(&card);
-    displayCard(card);
+    CellOfCards *cellOfCards = createCellOfCards(12, Coeur);
+    displayCellOfCards(cellOfCards);
+    deleteCellOfCards(&cellOfCards);
+    displayCellOfCards(cellOfCards);
     return 0;
 }

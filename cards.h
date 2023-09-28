@@ -4,7 +4,6 @@
 
 #ifndef CARDSBATTLE_CARDS_H
 #define CARDSBATTLE_CARDS_H
-#define NAMEMAX 10
 #include "colors.h"
 #include <stdlib.h>
 
