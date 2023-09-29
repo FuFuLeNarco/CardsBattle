@@ -1,4 +1,4 @@
-#include "character.h"
+#include "battleOfCards.h"
 
 int main() {
 //    SetOfCards *fullSetOfCards = createEmptySetOfCards();
@@ -24,13 +24,23 @@ int main() {
 //    printf("%d", lenOfSetOfCards(fullSetOfCards));
 //    displaySetOfCards(newSet);
 //    printf("%d", lenOfSetOfCards(newSet));
-    Character *character1 = createCharacterWithEmptySet("Marc");
-    Character *character2 = createCharacterWithEmptySet("Ines");
-    fillSetOfCards(character1->setOfCards);
-    fillSetOfCards(character2->setOfCards);
-    shuffleSetOfCards(character1->setOfCards);
-    shuffleSetOfCards(character2->setOfCards);
-    displayCharacter(character1);
-    displayCharacter(character2);
+//    Character *character1 = createCharacterWithEmptySet("Marc");
+//    Character *character2 = createCharacterWithEmptySet("Ines");
+//    fillSetOfCards(character1->setOfCards);
+//    fillSetOfCards(character2->setOfCards);
+//    shuffleSetOfCards(character1->setOfCards);
+//    shuffleSetOfCards(character2->setOfCards);
+//    displayCharacter(character1);
+//    displayCharacter(character2);
+    AreaBattle *areaBattle = createAreaBattleByNames("Marc", "Ines");
+//    displaySetOfCards(areaBattle->baseSetOfCards);
+//    displayAreaBattle(areaBattle);
+    distributeBaseOfSetToCharacters(areaBattle);
+//    displaySetOfCards(areaBattle->baseSetOfCards);
+//    displayAreaBattle(areaBattle);
+//    printf("\n%d\n", lenOfSetOfCards(areaBattle->character1->setOfCards));
+//    printf("\n%d\n", lenOfSetOfCards(areaBattle->character2->setOfCards));
+    makeAllRounds(areaBattle);
+//    displayAreaBattle(areaBattle);
     return 0;
 }
