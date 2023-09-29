@@ -43,21 +43,25 @@ void displaySetOfCardsRecursivly(CellOfCards* cellOfCards){
 
 void displaySetOfCards(SetOfCards* setOfCards){
     if(setOfCards != NULL){
-        displaySetOfCardsRecursivly(setOfCards->head);
+        if(lenOfSetOfCards(setOfCards) > 0){
+            displaySetOfCardsRecursivly(setOfCards->head);
+        }else{
+            printf("Empty set\n");
+        }
     }
 }
 
-void deleteSetOfCardsRecursivly(CellOfCards** cellOfCards){
-    if(*cellOfCards != NULL){
-        deleteSetOfCardsRecursivly(&(*cellOfCards)->next);
+void deleteSetOfCardsRecursivly(CellOfCards* cellOfCards){
+    if(cellOfCards != NULL){
+        deleteSetOfCardsRecursivly(cellOfCards->next);
         deleteCellOfCards(cellOfCards);
     }
 }
 
-void deleteSetOfCards(SetOfCards** setOfCards) {
-    deleteSetOfCardsRecursivly(&((*setOfCards)->head));
-    free(*setOfCards);
-    *setOfCards = NULL;
+void deleteSetOfCards(SetOfCards* setOfCards) {
+    deleteSetOfCardsRecursivly(setOfCards->head);
+    free(setOfCards);
+    setOfCards = NULL;
 }
 
 void fillSetOfCards(SetOfCards* setOfCards){

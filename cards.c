@@ -37,7 +37,7 @@ void displayCard(Card* card){
     }
 }
 
-void deleteCard(Card** card){
-    free(*card);
-    *card = NULL;
+void deleteCard(Card* card){
+    free(card);
+    card = NULL;
 }

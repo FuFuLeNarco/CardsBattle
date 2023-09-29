@@ -17,7 +17,7 @@ int lenOfSetOfCards(SetOfCards* setOfCards);
 SetOfCards *createEmptySetOfCards();
 void addCellOfCardToSetOfCardsByTail(SetOfCards* setOfCards, CellOfCards* cellOfCards);
 void displaySetOfCards(SetOfCards* setOfCards);
-void deleteSetOfCards(SetOfCards** setOfCards);
+void deleteSetOfCards(SetOfCards* setOfCards);
 void fillSetOfCards(SetOfCards* setOfCards);
 void shuffleSetOfCards(SetOfCards* setOfCards);
 CellOfCards *pickFirstCellOfCardInSetOfCards(SetOfCards* setOfCards);
