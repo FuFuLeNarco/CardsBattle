@@ -11,7 +11,7 @@ char* returnColorString(Color color){
         case Pique:
             return "Pique";
         case Trefle:
-            return "Trèfle";
+            return "Trefle";
         case Carreau:
             return "Carreau";
     }

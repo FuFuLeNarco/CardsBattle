@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 typedef enum Color{
-    Pique, Coeur, Trefle, Carreau
+    Pique = 1, Coeur = 2, Trefle = 3, Carreau = 4
 }Color;
 
 char* returnColorString(Color color);
