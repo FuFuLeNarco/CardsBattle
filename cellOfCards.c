@@ -15,8 +15,8 @@ void displayCellOfCards(CellOfCards* cellOfCards){
         displayCard(cellOfCards->card);
     }
 }
-void deleteCellOfCards(CellOfCards** cellOfCards){
-    deleteCard(&((*cellOfCards)->card));
-    free(*cellOfCards);
-    *cellOfCards = NULL;
+void deleteCellOfCards(CellOfCards* cellOfCards){
+    deleteCard(cellOfCards->card);
+    free(cellOfCards);
+    cellOfCards = NULL;
 }

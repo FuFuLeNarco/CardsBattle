@@ -15,6 +15,6 @@ typedef struct Card{
 char* returnSignWithValue(int value);
 Card *createCard(int value, Color color);
 void displayCard(Card* card);
-void deleteCard(Card** card);
+void deleteCard(Card* card);
 
 #endif //CARDSBATTLE_CARDS_H

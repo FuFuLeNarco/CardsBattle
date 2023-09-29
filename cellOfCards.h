@@ -13,6 +13,6 @@ typedef struct CellOfCards{
 
 CellOfCards *createCellOfCards(int value, Color color);
 void displayCellOfCards(CellOfCards* cellOfCards);
-void deleteCellOfCards(CellOfCards** cellOfCards);
+void deleteCellOfCards(CellOfCards* cellOfCards);
 
 #endif //CARDSBATTLE_CELLOFCARDS_H
