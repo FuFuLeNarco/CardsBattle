@@ -105,4 +105,17 @@ void shuffleSetOfCards(SetOfCards* setOfCards) {
     free(cardArray);
 }
 
+CellOfCards *pickFirstCellOfCardInSetOfCards(SetOfCards* setOfCards){
+    CellOfCards *pickedCellOfCard = setOfCards->head;
+    if(setOfCards->head->next != NULL){
+        setOfCards->head = setOfCards->head->next;
+    }else{
+        setOfCards->head = NULL;
+        setOfCards->tail = NULL;
+    }
+    pickedCellOfCard->next = NULL;
+    return pickedCellOfCard;
+}
+
+
 
